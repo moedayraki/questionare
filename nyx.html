@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta name="description" content="Webpage description goes here" />
+        <meta charset="utf-8">
+        <title>Want NYX back in Lebanon?!</title>
+        <link rel="icon" href="favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link href="/tailwind.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+    </head>
+    <style>
+        body{
+            background-image: url('favicon.ico');
+            background-repeat: no-repeat;
+            background-size: 30px 30px;
+            background-position: center; 
+        }
+    </style>
+    <body>
+    
+        <div class="sm:container mx-auto text-center h-screen font-mono">
+            <div class="bg-black justify-items-center py-6">
+                <img class="inline" src="/nyxcosmeticslogo.png">
+            </div>
+            <section id="welcome" class="align-middle pt-20">
+                <p>
+                    It's sad to learn that <b>NYX</b> cosmetics closed all of its branches in Lebanon.<br>
+                Therefore, we're having this survey to calculate how much do people want <b>NYX</b> back!
+                </p>
+                                
+                <button id="getstarted" class="border-double rounded border-4 border-pink-300 shadow-lg px-4 py-2 mt-10 bg-pink-50 hover:bg-pink-300 hover:text-white animate-pulse">Get started</button>
+            </section>
+
+            <section id="quest1" class="align-middle pt-20" style="display:none;">
+                <p>What's your favourite makeup brand?</p>
+                <input id="quest1input" autocomplete="off" class="border-b-2 border-black mt-2 focus:border-pink-300 focus:outline-none" type="text" name="brand" value="" placeholder="Favourite Brand">
+                <div>
+                    <button id="quest1next" style="display:none;" class="border-double rounded border-4 border-pink-300 shadow-lg px-4 py-2 mt-10 bg-pink-50 hover:bg-pink-300 hover:text-white">Next</button>
+                </div>
+            </section>
+
+            <section id="quest2" class="align-middle pt-20" style="display:none;">
+                <p class="mb-2">Do you prefer shopping for makeup online or instore?</p>
+                <div class="text-left pl-10 mb-2">
+                    <input id="quest2input1" type="radio" name="shopping" value="online">
+                    <lable for=shopping>Online</lable>
+                </div>
+                <div class="text-left pl-10 mb-2">
+                    <input id="quest2input2" type="radio" name="shopping" value="instore">
+                    <lable for=shopping>In-Store</lable>
+                </div>
+                <div class="text-left pl-10">
+                    <input id="quest2input3" type="radio" name="shopping" value="indifferent">
+                    <lable for=shopping>Indifferent</lable>
+                </div>
+                <div>
+                    <button id="quest2next" style="display:none;" class="border-double rounded border-4 border-pink-300 shadow-lg px-4 py-2 mt-5 bg-pink-50 hover:bg-pink-300 hover:text-white">Next</button>
+                </div>
+            </section>
+
+            <section id="quest3" class="align-middle pt-20" style="display:none;">
+                I use NYX brand for my _________.
+                <div class="text-left pl-10 mb-2">
+                    <input id="quest3input1" type="checkbox" name="lips" value="lips">
+                    <lable for=lips>Lips</lable>
+                </div>
+                <div class="text-left pl-10 mb-2">
+                    <input id="quest3input2" type="checkbox" name="face" value="face">
+                    <lable for=face>Face</lable>
+                </div>                
+                <div class="text-left pl-10">
+                    <input id="quest3input3" type="checkbox" name="eyes" value="eyes">
+                    <lable for=eyes>Eyes</lable>
+                </div>
+                <div>
+                    <button id="quest3next" style="display:none;" class="border-double rounded border-4 border-pink-300 shadow-lg px-4 py-2 mt-5 bg-pink-50 hover:bg-pink-300 hover:text-white">Next</button>
+                </div>
+            </section>
+
+            <section id="quest4" class="align-middle pt-20" style="display:none;">
+                Will you go back to NYX if it comes back to Lebanon.
+                <div class="text-left pl-10 mb-2">
+                    <input id="quest4input1" type="radio" name="nyx" value="yes">
+                    <lable for=lips>Ofcourse I will</lable>
+                </div>
+                <div class="text-left pl-10">
+                    <input id="quest4input2" type="radio" name="nyx" value="no">
+                    <lable for=lips>Nah, I'm out</lable>
+                </div>
+                <div>
+                    <button id="quest4next" style="display:none;" class="border-double rounded border-4 border-pink-300 shadow-lg px-4 py-2 mt-5 bg-pink-50 hover:bg-pink-300 hover:text-white">Next</button>
+                </div>
+            </section>
+
+            <section id="quest5" class="align-middle pt-20" style="display:none;">
+                Thank you for filling up the survey!<br>
+                <br>
+                We'd like you to fill these info to get more accurate statistics.<br>
+                <div class="text-left pl-10">
+                    <!-- <lable for="age">Age:</lable> -->
+                    <input id="quest5input1" placeholder="Age" autocomplete="off" class="border-b-2 border-black mt-2 focus:border-pink-300 focus:outline-none" type="number" name="age" value="">
+                </div>
+                <div class="text-left pl-10">
+                    <!-- <lable for="city">City:</lable> -->
+                    <input id="quest5input2" placeholder="City" autocomplete="off" class="border-b-2 border-black mt-2 focus:border-pink-300 focus:outline-none" type="text" name="city" value="">
+                </div>
+                <div class="text-left pl-10">
+                    <!-- <lable for="email">Email<i>(Optional)</i>:</lable> -->
+                    <input id="quest5input3" placeholder="Email (Optional)" autocomplete="off" class="border-b-2 border-black mt-2 focus:border-pink-300 focus:outline-none" type="text" name="city" value="">
+                </div>
+                <div>
+                    <button id="submit" style="display:none;" class="border-double rounded border-4 border-pink-300 shadow-lg px-4 py-2 mt-5 bg-pink-50 hover:bg-pink-300 hover:text-white">I'm Done</button>
+                </div>
+            </section>
+        </div>
+
+    <script>
+        $( "#getstarted" ).click(function() {
+            $("#welcome").fadeOut(200);
+            setTimeout(function(){
+                $("#quest1").fadeIn(200);
+            },200);
+          });
+        
+        $("#quest1input").change(function(){
+            if($(this).val() != ""){
+                $("#quest1next").fadeIn(100);
+            }
+            else{
+                $("#quest1next").fadeOut(100);
+            }
+        });
+
+        $( "#quest1next" ).click(function() {
+            $("#quest1").fadeOut(200);
+            setTimeout(function(){
+                $("#quest2").fadeIn(200);
+            },200);
+        });
+
+        $("#quest2input1 , #quest2input2 , #quest2input3").change(function(){
+            $("#quest2next").fadeIn(100);
+        });
+
+        $( "#quest2next" ).click(function() {
+            $("#quest2").fadeOut(200);
+            setTimeout(function(){
+                $("#quest3").fadeIn(200);
+            },200);
+        });
+
+        $("#quest3input1 , #quest3input2 , #quest3input3").change(function(){
+            if($("#quest3input1").prop("checked") == true || $("#quest3input2").prop("checked") == true || $("#quest3input3").prop("checked") == true){
+                $("#quest3next").fadeIn(100);
+            }
+            else{
+                $("#quest3next").fadeOut(100);
+            }
+        });
+
+        $( "#quest3next" ).click(function() {
+            $("#quest3").fadeOut(200);
+            setTimeout(function(){
+                $("#quest4").fadeIn(200);
+            },200);
+        });
+
+        $("#quest4input1 , #quest4input2").change(function(){
+            $("#quest4next").fadeIn(100);
+        });
+
+        $( "#quest4next" ).click(function() {
+            $("#quest4").fadeOut(200);
+            setTimeout(function(){
+                $("#quest5").fadeIn(200);
+            },200);
+        });
+
+        $("#quest5input1 , #quest5input2").change(function(){
+            if($("#quest5input1").val() != "" && $("#quest5input2").val() != ""){
+                $("#submit").fadeIn(100);
+            }
+            else{
+                $("#submit").fadeOut(100);
+            }
+        });
+
+        $("#submit").click(function(){
+            let brand = $("#quest1input").val();
+            let shop = $("input[name=shopping]:checked").val();
+            let lips = false;
+            if($("#quest3input1").prop("checked") == true) lips = true;
+            let face = false;
+            if($("#quest3input2").prop("checked") == true) face = true;
+            let eyes = false;
+            if($("#quest3input3").prop("checked") == true) eyes = true;
+            let nyx = $("input[name=nyx]:checked").val();
+            let age= $("#quest5input1").val();
+            let city= $("#quest5input2").val();
+            let email= $("#quest5input3").val();            
+            $.post('/submit.php',{
+                brand:brand,
+                shop:shop,
+                lips:lips,
+                face:face,
+                eyes:eyes,
+                nyx:nyx,
+                age:age,
+                city:city,
+                email:email,
+            }).done(function(response){
+                $("html").load('response.html');   
+            });
+        });
+    </script>
+
+    </body>
+</html>
